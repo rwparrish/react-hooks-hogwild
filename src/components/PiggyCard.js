@@ -15,17 +15,17 @@ function PiggyCard({name, image, greased, medal, weight, specialty}) {
     setIsHidden((isHidden) => !isHidden)
   }
 
-  if (isHidden) return
+  if (isHidden) return null
 
   return (
-    <div onClick={handleClick} class="ui eight wide column">
-      <div class="column">
-        <div class="ui fluid card">
-          <div class="image">
+    <div onClick={handleClick} className="ui eight wide column">
+      <div className="column">
+        <div className="ui fluid card">
+          <div className="image">
             <img src={image} />
             </div>
-          <div class="content">
-            <h1 class="header">{name}</h1>
+          <div className="content">
+            <h1 className="header">{name}</h1>
               <p>{details}</p>
          </div>
           <button onClick={handleHide}>

@@ -1,7 +1,7 @@
 import React from "react";
 import piggy from "../assets/porco.png";
 
-const Nav = ({handleGreasedHogs}) => {
+const Nav = ({handleGreasedHogs, handleSortingHogs}) => {
 
 	return (
 		<div className="navWrapper">
@@ -14,6 +14,10 @@ const Nav = ({handleGreasedHogs}) => {
 			</span>
 			<br/>
 			<button onClick={() => {handleGreasedHogs()}}>GrEaSeD hOgS oNlY pLeAsE</button>
+			<select onChange={(e) => {handleSortingHogs(e)}}>
+				<option value="name">name</option>
+				<option value="weight">weight</option>
+			</select>
 		</div>
 	);
 };

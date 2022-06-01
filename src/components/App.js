@@ -15,10 +15,30 @@ function App() {
 		setSwines(greasedHogsList)
 	}
 
+	const handleSortingHogs = (e) => {
+		const selection = e.target.value
+		if (selection === "name") {
+			const nameSortedHogs = hogs.sort((a, b) => {
+				if (a.name < b.name) {
+					return -1;
+				}
+				if (a.name > b.name) {
+					return 1
+				}
+				return 0;
+			})
+		setSwines([...nameSortedHogs])
+		}
+		if (selection === "weight") {
+			const weightSortedHogs = hogs.sort((a, b) => a.weight - b.weight)
+			setSwines([...weightSortedHogs])
+		}
+	}
+
 
 	return (
 		<div className="App">
-			<Nav handleGreasedHogs={handleGreasedHogs} />
+			<Nav handleGreasedHogs={handleGreasedHogs} handleSortingHogs={handleSortingHogs} />
 			<PiggyListLister swines={swines}/>
 		</div>
 	);

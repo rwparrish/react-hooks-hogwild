@@ -4,7 +4,8 @@ import PiggyCard from './PiggyCard'
 function PiggyListLister({swines}) {
 
     const porkerCards = swines.map((swine) => { 
-        return ( <PiggyCard 
+        return ( <PiggyCard
+            key={swine.image} 
             name={swine.name} 
             image={swine.image}
             greased={swine.greased}
@@ -15,7 +16,7 @@ function PiggyListLister({swines}) {
     })
 
   return (
-      <div class="ui grid container">
+      <div className="ui grid container">
           {porkerCards}
       </div>
     )
